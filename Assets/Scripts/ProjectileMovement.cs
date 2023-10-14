@@ -8,10 +8,12 @@ using UnityEngine;
 public class ProjectileMovement : MonoBehaviour
 {
     public float tear_speed = 4f;
-    public float time = 0;
-    public float range;
+    private float time = 0;
+    private float range;
     public Rigidbody2D rb;
+    private int mode; //0: palo,  1:Fuego,  2:Veneno,   3:Tiempo
     private enum movemntStatemnt {left, rigth, up, down}
+    private bool colision = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +43,15 @@ public class ProjectileMovement : MonoBehaviour
             Destroy(gameObject);
         }
         time++;
-        
-    }
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Target")
-        {
+        if(colision){
             Destroy(gameObject);
         }
+
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Target")
+        {
+            colision = true;
+        } 
     }
 }
