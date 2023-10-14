@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     
-    [SerializeField] private GameObject button;
-    [SerializeField] private GameObject panel;
+    private GameObject button;
+    private GameObject panel;
 
     // Start is called before the first frame update
     void Start()

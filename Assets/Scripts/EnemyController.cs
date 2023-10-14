@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,6 @@ using UnityEditor;
 using UnityEngine;
 using System;
 using UnityEngine.UIElements;
-using UnityEditorInternal;
 using Pathfinding;
 using TMPro;
 
@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     public float vida = 10;
     private Rigidbody2D rb2D;
     private AIPath aIPath;
+
     void Start()
     {
         animator = GetComponent<Animator>();
