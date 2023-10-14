@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private float dirX = 0;
     private float dirY = 0;
-    private enum movemntStatemnt {idle, left, rigth, up, down}
+    private enum movemntStatemnt {idle, left, rigth, up, down, upleft, uprigth}
     public SpriteRenderer spriteRend;
     public int lives = 3;
     /*public Projectile head;*/
@@ -23,26 +23,27 @@ public class PlayerController : MonoBehaviour
     }
 
     void updateAnim(){
-        movemntStatemnt state;
-        if(dirX > 0f){
-            state = movemntStatemnt.rigth;
-            spriteRend.flipX = false;
+        movemntStatemnt state = 0;
+        if(dirX == 0 && dirY == 0){
+            state = movemntStatemnt.idle;
         }
-        else if(dirX < 0f){
+        else if(dirX > 0f && dirY > 0f){
+            state = movemntStatemnt.uprigth;
+        }
+        else if(dirX < 0f && dirY > 0f){
+            state = movemntStatemnt.upleft;
+        }
+        else if(dirX > 0f && dirY >= 0f){
+            state = movemntStatemnt.rigth;
+        }
+        else if(dirX < 0f && dirY <= 0f){
             state = movemntStatemnt.left;
-            spriteRend.flipX = true;
         }
         else if(dirY < 0f){
-            spriteRend.flipX = false;
             state = movemntStatemnt.down;
         }
         else if(dirY > 0f){
-            spriteRend.flipX = false;
-            state = movemntStatemnt.up;
-        }
-        else{
-            spriteRend.flipX = false;
-            state = movemntStatemnt.idle;
+            state = movemntStatemnt.up; 
         }
         animator.SetInteger("state", (int)state);
     }
