@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour
 {
-    public float tear_speed = 4f;
+    public float tear_speed = 8f;
     private float time = 0;
     private float range;
     public Rigidbody2D rb;
@@ -48,10 +48,10 @@ public class ProjectileMovement : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Target")
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Target")
         {
-            colision = true;
-        } 
+            Destroy(gameObject);
+        }
     }
 }
