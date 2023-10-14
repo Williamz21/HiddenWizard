@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float dirY = 0;
     private enum movemntStatemnt {idle, left, rigth, up, down}
     public SpriteRenderer spriteRend;
+    public int lives = 3;
     /*public Projectile head;*/
 
     // Start is called before the first frame update
