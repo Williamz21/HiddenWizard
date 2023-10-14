@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 658607012}
+  panel: {fileID: 212607046}
 --- !u!114 &872870763
 MonoBehaviour:
   m_ObjectHideFlags: 0
