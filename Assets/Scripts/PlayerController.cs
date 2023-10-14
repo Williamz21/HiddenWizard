@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public int speed = 2;
+    public int speed = 5;
     Rigidbody2D rb2D;
     public Animator animator;
     private float dirX = 0;
     private float dirY = 0;
     private enum movemntStatemnt {idle, left, rigth, up, down}
     public SpriteRenderer spriteRend;
-    public Projectile head;
+    /*public Projectile head;*/
 
     // Start is called before the first frame update
     void Start()
