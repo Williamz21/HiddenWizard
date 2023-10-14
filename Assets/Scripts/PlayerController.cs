@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         dirY = Input.GetAxis("Vertical");
         Vector2 movimiento = new Vector2(dirX, dirY) * speed;
         rb2D.velocity = movimiento;
-        updateAnim();
+        //updateAnim();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
