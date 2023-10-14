@@ -1,9 +1,15 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    
+    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +20,10 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void StartGame(){
+        Debug.Log('a');
+        SceneManager.LoadScene(1);
     }
 }
