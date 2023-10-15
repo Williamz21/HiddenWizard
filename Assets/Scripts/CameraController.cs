@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject player;
-
+    public int leftMargin;
     void Start()
     {
         
@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-        if (player != null)
+        if (player != null && player.transform.position.x>=leftMargin)
         {
             Vector3 posicionObjetivo = player.transform.position;
             posicionObjetivo.y = transform.position.y;

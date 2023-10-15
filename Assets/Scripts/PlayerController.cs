@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private enum movemntStatemnt {idle, left, rigth, up, down, upleft, uprigth}
     public SpriteRenderer spriteRend;
     public int lives = 3;
+    public int mode = 0; //0:normal  1:fuego  2:tiempo
     /*public Projectile head;*/
 
     // Start is called before the first frame update
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         else if(dirY > 0f){
             state = movemntStatemnt.up; 
         }
+        animator.SetInteger("mode", mode);
         animator.SetInteger("state", (int)state);
     }
 
@@ -56,28 +58,21 @@ public class PlayerController : MonoBehaviour
         Vector2 movimiento = new Vector2(dirX, dirY) * speed;
         rb2D.velocity = movimiento;
         updateAnim();
+
+    }
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Tab) && dirX ==0f  && dirY ==0f){
+            if(mode == 2)
+                mode = 0;
+            else
+                mode++;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "NextLevel")
         {
             SceneManager.LoadScene(1);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Vector2 direccionEmpujon = (transform.position - collision.transform.position).normalized;
-        rb2D.AddForce(direccionEmpujon * 999f, ForceMode2D.Impulse);
-        UnityEngine.Debug.LogError("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        // Verifica si la colisión ocurrió con el objeto deseado (por ejemplo, usando etiquetas).
-        if (collision.gameObject.tag == "Target")
-        {
-            UnityEngine.Debug.LogError("AAAAAAAAA");
-            // Calcula la dirección del empujón desde el objeto que colisionó hacia el objeto actual.
-            //Vector2 direccionEmpujon = (transform.position - other.transform.position).normalized;
-            // Aplica la fuerza de empujón al objeto actual.
-            rb2D.AddForce(direccionEmpujon * 999f, ForceMode2D.Impulse);
         }
     }
 

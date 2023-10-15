@@ -35,49 +35,42 @@ public class EnemyController : MonoBehaviour
             animator.SetBool("dying", true);
             rb2D.simulated = false;
         }
-        /*else{
-            distance= Vector2.Distance(transform.position, player.transform.position);
-            direction = player.transform.position - transform.position;
-            direction.Normalize();
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            
-        }*/
         UpdateAnimation();
     }
 
     void UpdateAnimation()
     {
-        /*movementState state;
-        if (aIPath.desiredVelocity.x >= 0.01f)
+        movementState state;
+        if (aIPath.desiredVelocity.x < 0f && aIPath.desiredVelocity.y > 0f)
         {
-            state = movementState.right;
+            state = movementState.leftup;
         }
-        else if (aIPath.desiredVelocity.x <= -0.01f)
+        else if (aIPath.desiredVelocity.x > 0f && aIPath.desiredVelocity.y > 0f)
         {
-            state = movementState.left;
+            state = movementState.rightup;
         }
-        else if (aIPath.desiredVelocity.y <= 0.01f)
+        else if (aIPath.desiredVelocity.x > 0f && aIPath.desiredVelocity.y < 0f)
         {
-            state = movementState.up;
+            state = movementState.rightdown;
         }
-        else if (aIPath.desiredVelocity.y >= -0.01f)
+        else if (aIPath.desiredVelocity.x < 0f && aIPath.desiredVelocity.y < 0f)
         {
-            state = movementState.down;
+            state = movementState.leftdown;
         }   
         else
         {
             state = movementState.idle;
         }
-        animator.SetInteger("state", (int)state);*/
+        animator.SetInteger("state", (int)state);
     }
 
-        private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Projectile")
         {
-            if (other.tag == "Projectile")
-            {
-                vida--;
-            }
+            vida--;
         }
+    }
 
     void DestroySelf()
     {

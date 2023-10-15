@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 62c923d9496ddb14881c5211ef7d424b
+guid: 7d55425b601998e4e832339c73a3d7d2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wolf_0
+      name: Mesa de trabajo 28 copia 2@300x_0
       rect:
         serializedVersion: 2
-        x: 121
-        y: 440
-        width: 184
-        height: 200
+        x: 0
+        y: 1826
+        width: 809.5
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621d0e5ad7d7908488ecee2366c180bf
-      internalID: -606826603
+      spriteID: 0fe1ed496cc370f4fa0651f9ed6c863b
+      internalID: 196376003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf_1
+      name: Mesa de trabajo 28 copia 2@300x_1
       rect:
         serializedVersion: 2
-        x: 530
-        y: 445
-        width: 220
-        height: 190
+        x: 809
+        y: 1826
+        width: 809.5
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 602543d6b43aa1740ac44f381e7b89f7
-      internalID: 1367523980
+      spriteID: e6882faea9673f447989518ab7d41c62
+      internalID: -1902413196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf_2
+      name: Mesa de trabajo 28 copia 2@300x_2
       rect:
         serializedVersion: 2
-        x: 975
-        y: 440
-        width: 184
-        height: 200
+        x: 0
+        y: 913
+        width: 809.5
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbd2879e18db3c44ba22af50d981527e
-      internalID: -604849360
+      spriteID: c4bc6d2b12faadb4393c0dc409b16a32
+      internalID: 1378076370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf_3
+      name: Mesa de trabajo 28 copia 2@300x_3
       rect:
         serializedVersion: 2
-        x: 110
-        y: 82
-        width: 206
-        height: 196
+        x: 809
+        y: 913
+        width: 809.5
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd28b616ec2290a46951f9a1cdfd0d4d
-      internalID: -81958875
+      spriteID: 9d70b7381621a17439ef6e2e36317f6f
+      internalID: 1028780472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf_4
+      name: Mesa de trabajo 28 copia 2@300x_4
       rect:
         serializedVersion: 2
-        x: 530
-        y: 85
-        width: 220
-        height: 190
+        x: 0
+        y: 0
+        width: 809.5
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3697ee93f94d5c43a53ec1beb0f754e
-      internalID: -1220215821
+      spriteID: 9305db1effe32974dbff233d25af3c78
+      internalID: 1125038449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf_5
+      name: Mesa de trabajo 28 copia 2@300x_5
       rect:
         serializedVersion: 2
-        x: 964
-        y: 82
-        width: 206
-        height: 196
+        x: 809
+        y: 0
+        width: 809.5
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c83689e60a51224a8cb31cb0d6ead1c
-      internalID: 635561735
+      spriteID: 664e170417dca884796d174c2b2ff70b
+      internalID: -20951738
       vertices: []
       indices: 
       edges: []
@@ -240,12 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wolf_3: -81958875
-      wolf_2: -604849360
-      wolf_4: -1220215821
-      wolf_5: 635561735
-      wolf_1: 1367523980
-      wolf_0: -606826603
+      Mesa de trabajo 28 copia 2@300x_5: -20951738
+      Mesa de trabajo 28 copia 2@300x_4: 1125038449
+      Mesa de trabajo 28 copia 2@300x_0: 196376003
+      Mesa de trabajo 28 copia 2@300x_1: -1902413196
+      Mesa de trabajo 28 copia 2@300x_3: 1028780472
+      Mesa de trabajo 28 copia 2@300x_2: 1378076370
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
