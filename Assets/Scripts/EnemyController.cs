@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     private Vector2 direction;
     private Animator animator;
     private enum movementState { idle, leftup, rightup, leftdown, rightdown }
-    public float vida = 40;
+    public float vida = 1000;
     private Rigidbody2D rb2D;
     private AIPath aIPath;
     private int effect = 0;
@@ -27,53 +27,59 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         aIPath = GetComponent<AIPath>();
+        speed = aIPath.maxSpeed;
+        aIPath.enabled = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        if (vida == 0)
+        if (vida <= 0 && rb2D.simulated == true)
         {
+            Transform a = transform.GetChild(0);
+            Animator anim = a.GetComponent<Animator>();
+            anim.SetInteger("state", 0);
             animator.SetBool("dying", true);
             rb2D.simulated = false;
         }
-        UpdateAnimation();
-        UpdateEffect();
+        if(rb2D.simulated == true){
+            UpdateAnimation();
+            UpdateEffect();
+        }
     }
 
     private void UpdateEffect(){
-        if(timer == 40 && effect == 2){
-            aIPath.maxSpeed = aIPath.maxSpeed/2;
+        if(timer == 130 && effect == 2){
+            aIPath.maxSpeed = speed/2;
             timer--;
         }
         else if(timer == 0 && effect == 2){
-            aIPath.maxSpeed = aIPath.maxSpeed*2;
+            aIPath.maxSpeed = speed;
             effect = 0;
         }
-        else{
-            timer--;
-            UnityEngine.Debug.LogError(effect);
-        }
-        if(timer > 0 && effect == 1){
-            timer--;
-        }
-        else if(timer <= 0 && effect == 1){
+        if(timer <= 0 && effect == 1){
             effect = 0;
         }
-        else if(timer % 5 == 0 && effect == 1){
+        else if(timer % 20 == 0 && effect == 1){
             vida--;
+        }
+        if(timer > 0){
+            timer--;
         }
     }
 
     public void setEffect(int m){
         if(m == 1){
             effect = 1;
-            timer = 80;
+            timer = 200;
         }
         if(m == 2){
+            if(effect ==2){
+                aIPath.maxSpeed = speed;
+            }
             effect = 2;
-            timer = 40;
+            timer = 130;
         }
     }
 
@@ -86,7 +92,7 @@ public class EnemyController : MonoBehaviour
         }
         else if (aIPath.desiredVelocity.x > 0f && aIPath.desiredVelocity.y > 0f)
         {
-            state = movementState.rightup;
+            state = movementState.rightup;;
         }
         else if (aIPath.desiredVelocity.x > 0f && aIPath.desiredVelocity.y < 0f)
         {
@@ -100,6 +106,9 @@ public class EnemyController : MonoBehaviour
         {
             state = movementState.idle;
         }
+        Transform a = transform.GetChild(0);
+        Animator anim = a.GetComponent<Animator>();
+        anim.SetInteger("state", effect);
         animator.SetInteger("state", (int)state);
     }
 
