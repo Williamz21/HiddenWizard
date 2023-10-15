@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3084098073868450487}
   - component: {fileID: 3958663700675889381}
   - component: {fileID: 4454814351037733763}
+  - component: {fileID: 6316002318362681778}
   m_Layer: 6
   m_Name: ProjectileFire
   m_TagString: Projectile
@@ -138,3 +139,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tear_speed: 8
   rb: {fileID: 3958663700675889381}
+--- !u!95 &6316002318362681778
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5366200057205606605}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 386719d685c3cee44b907fdbc2ed82fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

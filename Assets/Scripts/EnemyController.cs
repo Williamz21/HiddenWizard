@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private float distance;
     private Vector2 direction;
     private Animator animator;
-    private enum movementState { idle, left, right, up, down }
+    private enum movementState { idle, leftup, rightup, leftdown, rightdown }
     public float vida = 10;
     private Rigidbody2D rb2D;
     private AIPath aIPath;
@@ -47,24 +47,7 @@ public class EnemyController : MonoBehaviour
 
     void UpdateAnimation()
     {
-        movementState state;
         /*movementState state;
-        if(direction.x > 0f){
-            state = movementState.right;
-        }
-        else if(direction.x < 0f){
-            state = movementState.left;
-        }
-        else if(direction.y < 0f){
-            state = movementState.down;
-        }
-        else if(direction.y > 0f){
-            state = movementState.up;
-        }
-        else{
-            state = movementState.idle;
-        }
-        animator.SetInteger("state", (int)state);*/
         if (aIPath.desiredVelocity.x >= 0.01f)
         {
             state = movementState.right;
@@ -80,12 +63,12 @@ public class EnemyController : MonoBehaviour
         else if (aIPath.desiredVelocity.y >= -0.01f)
         {
             state = movementState.down;
-        }
+        }   
         else
-            {
-                state = movementState.idle;
-            }
-        animator.SetInteger("state", (int)state);
+        {
+            state = movementState.idle;
+        }
+        animator.SetInteger("state", (int)state);*/
     }
 
         private void OnTriggerEnter2D(Collider2D other)

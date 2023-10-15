@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6db584c8af1fffb4f9b23de111904481
+guid: 62c923d9496ddb14881c5211ef7d424b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: carrot_0
+      name: wolf_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 679.3334
-        width: 339.66666
-        height: 339.66666
+        x: 121
+        y: 440
+        width: 184
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4225dcef6b70f0448c58700dcf24434
-      internalID: -2133042731
+      spriteID: 621d0e5ad7d7908488ecee2366c180bf
+      internalID: -606826603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot_1
+      name: wolf_1
       rect:
         serializedVersion: 2
-        x: 339
-        y: 679.3334
-        width: 339.66666
-        height: 339.66666
+        x: 530
+        y: 445
+        width: 220
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1374ffdd316904143b74be10c40f7829
-      internalID: -1063428691
+      spriteID: 602543d6b43aa1740ac44f381e7b89f7
+      internalID: 1367523980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot_2
+      name: wolf_2
       rect:
         serializedVersion: 2
-        x: 678
-        y: 679.3334
-        width: 339.66666
-        height: 339.66666
+        x: 975
+        y: 440
+        width: 184
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b004ed4592aa0fb4da79d06c1cbcd7db
-      internalID: -5130714
+      spriteID: fbd2879e18db3c44ba22af50d981527e
+      internalID: -604849360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot_3
+      name: wolf_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 340.33334
-        width: 339.66666
-        height: 339.66666
+        x: 110
+        y: 82
+        width: 206
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 957f17da70f6b1c40993453697fffc28
-      internalID: -1657533061
+      spriteID: dd28b616ec2290a46951f9a1cdfd0d4d
+      internalID: -81958875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot_4
+      name: wolf_4
       rect:
         serializedVersion: 2
-        x: 339
-        y: 340.33334
-        width: 339.66666
-        height: 339.66666
+        x: 530
+        y: 85
+        width: 220
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc2e4da2e0774a4dba7b7f66f49344a
-      internalID: -33970781
+      spriteID: d3697ee93f94d5c43a53ec1beb0f754e
+      internalID: -1220215821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot_5
+      name: wolf_5
       rect:
         serializedVersion: 2
-        x: 678
-        y: 340.33334
-        width: 339.66666
-        height: 339.66666
+        x: 964
+        y: 82
+        width: 206
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,71 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45758b8bd7f9a340b7547b024d7cbe7
-      internalID: 408935143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carrot_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1.3333435
-        width: 339.66666
-        height: 339.66666
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed57edbf1ee0a1e4ba2d05d93ab47778
-      internalID: 644265139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carrot_7
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 1.3333435
-        width: 339.66666
-        height: 339.66666
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a37085bbc19acd845853bd9bfa916eb4
-      internalID: 44085080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carrot_8
-      rect:
-        serializedVersion: 2
-        x: 678
-        y: 1.3333435
-        width: 339.66666
-        height: 339.66666
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4da95b53c8430614094e352df5891f81
-      internalID: -465626233
+      spriteID: 7c83689e60a51224a8cb31cb0d6ead1c
+      internalID: 635561735
       vertices: []
       indices: 
       edges: []
@@ -303,15 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      carrot_5: 408935143
-      carrot_8: -465626233
-      carrot_6: 644265139
-      carrot_0: -2133042731
-      carrot_3: -1657533061
-      carrot_2: -5130714
-      carrot_7: 44085080
-      carrot_4: -33970781
-      carrot_1: -1063428691
+      wolf_3: -81958875
+      wolf_2: -604849360
+      wolf_4: -1220215821
+      wolf_5: 635561735
+      wolf_1: 1367523980
+      wolf_0: -606826603
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

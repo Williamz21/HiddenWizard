@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         else if(dirX < 0f && dirY > 0f){
             state = movemntStatemnt.upleft;
         }
-        else if(dirX > 0f && dirY >= 0f){
+        else if(dirX > 0f && dirY <= 0f){
             state = movemntStatemnt.rigth;
         }
         else if(dirX < 0f && dirY <= 0f){
@@ -64,4 +64,21 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Vector2 direccionEmpujon = (transform.position - collision.transform.position).normalized;
+        rb2D.AddForce(direccionEmpujon * 999f, ForceMode2D.Impulse);
+        UnityEngine.Debug.LogError("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        // Verifica si la colisión ocurrió con el objeto deseado (por ejemplo, usando etiquetas).
+        if (collision.gameObject.tag == "Target")
+        {
+            UnityEngine.Debug.LogError("AAAAAAAAA");
+            // Calcula la dirección del empujón desde el objeto que colisionó hacia el objeto actual.
+            //Vector2 direccionEmpujon = (transform.position - other.transform.position).normalized;
+            // Aplica la fuerza de empujón al objeto actual.
+            rb2D.AddForce(direccionEmpujon * 999f, ForceMode2D.Impulse);
+        }
+    }
+
 }
