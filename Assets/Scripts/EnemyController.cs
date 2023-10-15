@@ -72,6 +72,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+        private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerController>().rebote(other.GetContact(0).normal);
+            UnityEngine.Debug.LogError('A');
+        }
+    }
+
     void DestroySelf()
     {
         Destroy(gameObject);
