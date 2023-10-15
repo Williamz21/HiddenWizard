@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 433f88012bb011e4ebdd659f05165fc6
+guid: f2b45cfb59e69f340a1d2ee62f4c4282
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -65,7 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -108,70 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Mesa de trabajo 83@300x_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1278.6667
-        width: 730
-        height: 639.3333
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fccc65b45cf2c2c4186862814fa4bf09
-      internalID: 1238079031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mesa de trabajo 83@300x_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 639.6667
-        width: 730
-        height: 639.3333
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46dc63b7d5f6c8643aa63b1ed0614ad1
-      internalID: 1620966547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mesa de trabajo 83@300x_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0.666687
-        width: 730
-        height: 639.3333
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d156cf3091a0e3945a1d2bd2a3b1ec07
-      internalID: -542853189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -182,10 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Mesa de trabajo 83@300x_0: 1238079031
-      Mesa de trabajo 83@300x_1: 1620966547
-      Mesa de trabajo 83@300x_2: -542853189
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

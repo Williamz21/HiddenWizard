@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private float dirX = 0;
     private float dirY = 0;
-    private enum movemntStatemnt {idle, left, rigth, up, down, upleft, uprigth}
+    private enum movemntStatemnt { idle, left, rigth, up, down, upleft, uprigth }
     public SpriteRenderer spriteRend;
-    public int lives = 3;
+    public float lives = 3f;
     public int mode = 0; //0:normal  1:fuego  2:tiempo
-    /*public Projectile head;*/
+    [SerializeField] public Lifebar lifebar;
+    private bool canMove = true;
+    private bool died = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,28 +25,36 @@ public class PlayerController : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    void updateAnim(){
+    void updateAnim()
+    {
         movemntStatemnt state = 0;
-        if(dirX == 0 && dirY == 0){
+        if (dirX == 0 && dirY == 0)
+        {
             state = movemntStatemnt.idle;
         }
-        else if(dirX > 0f && dirY > 0f){
+        else if (dirX > 0f && dirY > 0f)
+        {
             state = movemntStatemnt.uprigth;
         }
-        else if(dirX < 0f && dirY > 0f){
+        else if (dirX < 0f && dirY > 0f)
+        {
             state = movemntStatemnt.upleft;
         }
-        else if(dirX > 0f && dirY <= 0f){
+        else if (dirX > 0f && dirY <= 0f)
+        {
             state = movemntStatemnt.rigth;
         }
-        else if(dirX < 0f && dirY <= 0f){
+        else if (dirX < 0f && dirY <= 0f)
+        {
             state = movemntStatemnt.left;
         }
-        else if(dirY < 0f){
+        else if (dirY < 0f)
+        {
             state = movemntStatemnt.down;
         }
-        else if(dirY > 0f){
-            state = movemntStatemnt.up; 
+        else if (dirY > 0f)
+        {
+            state = movemntStatemnt.up;
         }
         animator.SetInteger("mode", mode);
         animator.SetInteger("state", (int)state);
@@ -53,27 +63,59 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        dirX = Input.GetAxis("Horizontal");
-        dirY = Input.GetAxis("Vertical");
-        Vector2 movimiento = new Vector2(dirX, dirY) * speed;
-        rb2D.velocity = movimiento;
-        updateAnim();
-
+        if (canMove)
+        {
+            dirX = Input.GetAxis("Horizontal");
+            dirY = Input.GetAxis("Vertical");
+            Vector2 movimiento = new Vector2(dirX, dirY) * speed;
+            rb2D.velocity = movimiento;
+            updateAnim();
+        }
+        if (lives <= 0 && rb2D.simulated==true)
+        {
+            animator.SetBool("died", true);
+            rb2D.simulated = false;
+        }
     }
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Tab) && dirX ==0f  && dirY ==0f){
-            if(mode == 2)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && dirX == 0f && dirY == 0f)
+        {
+            if (mode == 2)
                 mode = 0;
             else
                 mode++;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "NextLevel")
+    public void rebote(Vector2 point)
+    {
+        Vector2 velocity = new Vector2(5f, 5f);
+        rb2D.velocity = new Vector2(-velocity.x * point.x, -velocity.y * point.y);
+    }
+
+    private IEnumerator LoseControl()
+    {
+        canMove = false;
+        yield return new WaitForSeconds(0.5f);
+        canMove = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "NextLevel")
         {
             SceneManager.LoadScene(1);
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Target")
+        {
+            lives-=1;
+            lifebar.ChangeLife(lives);
+            StartCoroutine(LoseControl());
+        }
+    }
 }

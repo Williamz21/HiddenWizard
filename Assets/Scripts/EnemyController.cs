@@ -58,7 +58,13 @@ public class EnemyController : MonoBehaviour
             aIPath.maxSpeed = speed;
             effect = 0;
         }
-        if(timer <= 0 && effect == 1){
+        else{
+            timer--;
+        }
+        if(timer > 0 && effect == 1){
+            timer--;
+        }
+        else if(timer <= 0 && effect == 1){
             effect = 0;
         }
         else if(timer % 20 == 0 && effect == 1){
@@ -117,6 +123,14 @@ public class EnemyController : MonoBehaviour
         if (other.tag == "Projectile")
         {
             vida-=3;
+        }
+    }
+
+        private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerController>().rebote(other.GetContact(0).normal);
         }
     }
 

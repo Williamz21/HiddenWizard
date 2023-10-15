@@ -19,8 +19,9 @@ public class MenuPause : MonoBehaviour
         Continue();
     }
 
-    public void Pause(){
-        if(Input.GetKeyDown(KeyCode.Escape))
+    public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0f;
             menu.SetActive(true);
@@ -28,14 +29,16 @@ public class MenuPause : MonoBehaviour
         }
     }
 
-    public void PauseOnClick(){
+    public void PauseOnClick()
+    {
         Time.timeScale = 0f;
         menu.SetActive(true);
         button.SetActive(false);
     }
 
-    public void Continue(){
-        if(Input.GetKeyDown(KeyCode.Return))
+    public void Continue()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             Time.timeScale = 1f;
             menu.SetActive(false);
@@ -43,9 +46,15 @@ public class MenuPause : MonoBehaviour
         }
     }
 
-    public void ContinueOnClick(){
+    public void ContinueOnClick()
+    {
         Time.timeScale = 1f;
         menu.SetActive(false);
         button.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
