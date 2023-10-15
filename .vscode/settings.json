@@ -52,5 +52,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "dotnet.defaultSolution": "HiddenWizard.sln"
+    "dotnet.defaultSolution": "HiddenWizard.sln",
+    "dotnet.preferCSharpExtension": true
 }
