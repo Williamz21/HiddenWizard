@@ -53,7 +53,6 @@ public class EnemyController : MonoBehaviour
         }
         else{
             timer--;
-            UnityEngine.Debug.LogError(effect);
         }
         if(timer > 0 && effect == 1){
             timer--;
@@ -116,7 +115,6 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().rebote(other.GetContact(0).normal);
-            UnityEngine.Debug.LogError('A');
         }
     }
 

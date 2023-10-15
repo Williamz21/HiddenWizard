@@ -6,26 +6,23 @@ using UnityEngine.UI;
 public class Lifebar : MonoBehaviour
 {
     private Slider slider;
+    public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
         slider = GetComponent<Slider>();
+        MaxLife();
+        ChangeLife(playerController.lives);
     }
 
     // Update is called once per frame
-    public void MaxLife(float life)
+    public void MaxLife()
     {
-        slider.maxValue = life;
+        slider.maxValue = playerController.lives;
     }
 
     public void ChangeLife(float life)
     {
         slider.value = life;
-    }
-
-    public void SetLife(float life)
-    {
-        MaxLife(life);
-        ChangeLife(life);
     }
 }

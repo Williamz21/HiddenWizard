@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour
     public float lives = 3f;
     public int mode = 0; //0:normal  1:fuego  2:tiempo
     [SerializeField] public Lifebar lifebar;
-    public bool canMove = true;
+    private bool canMove = true;
+    private bool died = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        lifebar.SetLife(lives);
     }
 
     void updateAnim()
@@ -63,14 +63,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        dirX = Input.GetAxis("Horizontal");
-        dirY = Input.GetAxis("Vertical");
         if (canMove)
         {
+            dirX = Input.GetAxis("Horizontal");
+            dirY = Input.GetAxis("Vertical");
             Vector2 movimiento = new Vector2(dirX, dirY) * speed;
             rb2D.velocity = movimiento;
+            updateAnim();
         }
-        updateAnim();
+        if (lives <= 0 && rb2D.simulated==true)
+        {
+            animator.SetBool("died", true);
+            rb2D.simulated = false;
+        }
     }
     private void Update()
     {
@@ -108,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Target")
         {
-            lives--;
+            lives-=1;
             lifebar.ChangeLife(lives);
             StartCoroutine(LoseControl());
         }
