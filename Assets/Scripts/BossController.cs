@@ -40,9 +40,6 @@ public class BossController : MonoBehaviour
     {
         if (vida <= 0 && rb2D.simulated == true)
         {
-            Transform a = transform.GetChild(0);
-            Animator anim = a.GetComponent<Animator>();
-            anim.SetInteger("state", 0);
             animator.SetBool("died", true);
             rb2D.simulated = false;
         }
@@ -93,13 +90,6 @@ public class BossController : MonoBehaviour
         anim.SetInteger("state", effect);
         animator.SetInteger("state", (int)state);
     }*/
-
-    private IEnumerator LoseControl()
-    {
-        canInvoke = true;
-        yield return new WaitForSeconds(10f);
-        canInvoke = false;
-    }
 
     private void Invoke()
     {

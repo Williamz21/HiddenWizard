@@ -78,8 +78,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("died", true);
             rb2D.simulated = false;
         }
-            UnityEngine.Debug.LogError(time);
-            UnityEngine.Debug.LogError(fire);
 
     }
     private void Update()
