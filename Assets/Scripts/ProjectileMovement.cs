@@ -10,7 +10,7 @@ public class ProjectileMovement : MonoBehaviour
     private float time = 0;
     private float range;
     public Rigidbody2D rb;
-    private int mode; //0: palo,  1:Fuego,  2:Veneno,   3:Tiempo
+    public int mode; //0: default,  1:Fuego,  2:Tiempo
     private enum movemntStatemnt {left, rigth, up, down}
     private bool colision = false;
     // Start is called before the first frame update
@@ -50,6 +50,8 @@ public class ProjectileMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Target")
         {
+            other.GetComponent<EnemyController>().setEffect(mode);
+            UnityEngine.Debug.Log(mode);;
             Destroy(gameObject);
         }
     }
