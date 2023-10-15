@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Lifebar lifebar;
     private bool canMove = true;
     private bool died = false;
+    private bool fire = false;
+    private bool time = false;
 
     // Start is called before the first frame update
     void Start()
@@ -76,15 +78,32 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("died", true);
             rb2D.simulated = false;
         }
+            UnityEngine.Debug.LogError(time);
+            UnityEngine.Debug.LogError(fire);
+
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab) && dirX == 0f && dirY == 0f)
         {
-            if (mode == 2)
-                mode = 0;
-            else
-                mode++;
+            if(fire && time){
+                if (mode == 2)
+                    mode = 0;
+                else
+                    mode++;
+            }
+            else if(fire){
+                if (mode == 1)
+                    mode = 0;
+                else
+                    mode++;
+            }
+            else if(time){
+                if(mode == 2)
+                    mode = 0;
+                else
+                    mode = 2;
+            }
         }
     }
 
@@ -116,6 +135,19 @@ public class PlayerController : MonoBehaviour
             lives-=1;
             lifebar.ChangeLife(lives);
             StartCoroutine(LoseControl());
+        }
+
+    }
+    public void gainObject(int item_id){
+        if (item_id == 1)
+        {
+            fire = true;
+            UnityEngine.Debug.LogError(fire);
+        }
+        if (item_id == 2)
+        {
+            UnityEngine.Debug.LogError(time);
+            time = true;
         }
     }
 }

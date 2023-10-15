@@ -51,7 +51,7 @@ public class ProjectileMovement : MonoBehaviour
         if(other.tag == "Target")
         {
             other.GetComponent<EnemyController>().setEffect(mode);
-            UnityEngine.Debug.Log(mode);;
+            UnityEngine.Debug.Log(mode);
             Destroy(gameObject);
         }
     }

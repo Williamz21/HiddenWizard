@@ -132,9 +132,13 @@ public class EnemyController : MonoBehaviour
         {
             vida-=3;
         }
+        if (other.tag == "Projectile")
+        {
+            vida-=3;
+        }
     }
 
-        private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
