@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mesa de trabajo 115@300x_0
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 2755
+        width: 428
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1b8141b33a2f44b90ebd31705a0080
+      internalID: -2077148458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mesa de trabajo 115@300x_2
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1904
+        width: 545
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86265892711dac47921bd997cd3ddd2
+      internalID: -565021777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mesa de trabajo 115@300x_4
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1041
+        width: 638
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a2e888d4e4b4945a29dda9f940d508
+      internalID: -442340380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mesa de trabajo 115@300x_5
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 175
+        width: 946
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f5d33e672968f49919d484ef94135f
+      internalID: 795407395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mesa de trabajo 115@300x_0: -2077148458
+      Mesa de trabajo 115@300x_1: 160569996
+      Mesa de trabajo 115@300x_2: -565021777
+      Mesa de trabajo 115@300x_3: 434927572
+      Mesa de trabajo 115@300x_4: -442340380
+      Mesa de trabajo 115@300x_5: 795407395
+      Mesa de trabajo 115@300x_6: 916034037
+      Mesa de trabajo 115@300x_7: -967530177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
