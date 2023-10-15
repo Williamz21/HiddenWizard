@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099886231132561164}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5067255713713427979}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7995616420952840104
 MonoBehaviour:
@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 8361674071066531786}
   projectilePrefab: {fileID: 5366200057205606605, guid: f75c030ff252cdc4fa5b7035c590bdb6, type: 3}
+  timeProjectilePrefab: {fileID: 0}
+  fireProjectilePrefab: {fileID: 0}
   tear_delay: 24
   range: 80
   spriteRend: {fileID: 1302986375348063035}
@@ -106,7 +108,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &3383452148362787948
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,7 +125,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3491069652937086283
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +139,6 @@ GameObject:
   - component: {fileID: 2747598715036224797}
   - component: {fileID: 8499288873707898251}
   - component: {fileID: 4410698924271969491}
-  - component: {fileID: 7612777716214964765}
   - component: {fileID: 4304741865621283699}
   m_Layer: 0
   m_Name: Player
@@ -152,6 +154,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3491069652937086283}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.373, y: 1.257, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -159,7 +162,6 @@ Transform:
   m_Children:
   - {fileID: 8361674071066531786}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2747598715036224797
 SpriteRenderer:
@@ -229,6 +231,7 @@ MonoBehaviour:
   animator: {fileID: 4304741865621283699}
   spriteRend: {fileID: 2747598715036224797}
   lives: 3
+  mode: 0
 --- !u!50 &4410698924271969491
 Rigidbody2D:
   serializedVersion: 4
@@ -246,29 +249,19 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &7612777716214964765
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3491069652937086283}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!95 &4304741865621283699
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -285,4 +278,5 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

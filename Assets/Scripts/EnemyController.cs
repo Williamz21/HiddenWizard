@@ -16,9 +16,11 @@ public class EnemyController : MonoBehaviour
     private Vector2 direction;
     private Animator animator;
     private enum movementState { idle, leftup, rightup, leftdown, rightdown }
-    public float vida = 10;
+    public float vida = 40;
     private Rigidbody2D rb2D;
     private AIPath aIPath;
+    private int effect = 0;
+    private int timer = 0;
 
     void Start()
     {
@@ -30,12 +32,49 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (vida == 0)
         {
             animator.SetBool("dying", true);
             rb2D.simulated = false;
         }
         UpdateAnimation();
+        UpdateEffect();
+    }
+
+    private void UpdateEffect(){
+        if(timer == 40 && effect == 2){
+            aIPath.maxSpeed = aIPath.maxSpeed/2;
+            timer--;
+        }
+        else if(timer == 0 && effect == 2){
+            aIPath.maxSpeed = aIPath.maxSpeed*2;
+            effect = 0;
+        }
+        else{
+            timer--;
+            UnityEngine.Debug.LogError(effect);
+        }
+        if(timer > 0 && effect == 1){
+            timer--;
+        }
+        else if(timer <= 0 && effect == 1){
+            effect = 0;
+        }
+        else if(timer % 5 == 0 && effect == 1){
+            vida--;
+        }
+    }
+
+    public void setEffect(int m){
+        if(m == 1){
+            effect = 1;
+            timer = 80;
+        }
+        if(m == 2){
+            effect = 2;
+            timer = 40;
+        }
     }
 
     void UpdateAnimation()
@@ -68,7 +107,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Projectile")
         {
-            vida--;
+            vida-=3;
         }
     }
 
