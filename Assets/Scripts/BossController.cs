@@ -21,6 +21,13 @@ public class BossController : MonoBehaviour
     private int effect = 0;
     public float distanciaMaxima = 10.0f;
     private int timer = 0;
+    private bool canInvoke = false;
+    float tiempoTranscurrido = 25f;
+    float intervaloDeTiempo = 30f; // 30 segundos
+
+    [SerializeField] private LifeBossBAR lifeBossBAR;
+
+    public EnemyController enemyPrefab;
 
     void Start()
     {
@@ -38,6 +45,18 @@ public class BossController : MonoBehaviour
             anim.SetInteger("state", 0);
             animator.SetBool("died", true);
             rb2D.simulated = false;
+        }
+        // Resta el tiempo delta desde la variable timeRemaining.
+        tiempoTranscurrido += Time.deltaTime;
+
+        // Verifica si ha pasado el intervalo de tiempo
+        if (tiempoTranscurrido >= intervaloDeTiempo)
+        {
+            // Llama a la función que quieres ejecutar
+            Invoke();
+
+            // Reinicia el temporizador
+            tiempoTranscurrido = 0f;
         }
         /*if (rb2D.simulated == true)
         {
@@ -75,11 +94,25 @@ public class BossController : MonoBehaviour
         animator.SetInteger("state", (int)state);
     }*/
 
+    private IEnumerator LoseControl()
+    {
+        canInvoke = true;
+        yield return new WaitForSeconds(10f);
+        canInvoke = false;
+    }
+
+    private void Invoke()
+    {
+        EnemyController obj = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.rotation);
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Projectile")
         {
-            vida -= 3;
+            vida -= 20;
+            lifeBossBAR.ChangeLife(vida);
         }
     }
 
@@ -89,10 +122,5 @@ public class BossController : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerController>().rebote(other.GetContact(0).normal);
         }
-    }
-
-    void DestroySelf()
-    {
-        Destroy(gameObject);
     }
 }

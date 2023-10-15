@@ -273,6 +273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   vida: 100
+  aIPath: {fileID: 0}
+  distanciaMaxima: 10
 --- !u!1 &8845206983061974602
 GameObject:
   m_ObjectHideFlags: 0
