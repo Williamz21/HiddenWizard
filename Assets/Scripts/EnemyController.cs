@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb2D;
     private AIPath aIPath;
     private int effect = 0;
+    public float distanciaMaxima = 10.0f;
     private int timer = 0;
 
     void Start()
@@ -34,7 +35,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        if(aIPath.enabled == false){
+            GameObject jugador = GameObject.Find("Player");
+            float distancia = Vector2.Distance(transform.position, jugador.transform.position);
+            if (distancia <= distanciaMaxima)
+            {
+                aIPath.enabled = true;
+            }
+        }
         if (vida <= 0 && rb2D.simulated == true)
         {
             Transform a = transform.GetChild(0);
