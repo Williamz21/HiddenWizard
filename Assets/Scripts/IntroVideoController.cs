@@ -15,7 +15,7 @@ public class ReproductorVideo : MonoBehaviour
 
     void CambiarEscenaAlFinalizar(VideoPlayer vp)
     {
-        SceneManager.LoadScene(escenaAlFinalizar);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     void Update()

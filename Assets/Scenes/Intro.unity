@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a337cd539cd8f93438257d629d50d13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
-  escenaAlFinalizar: 0
+  videoPlayer: {fileID: 1719029244}
+  escenaAlFinalizar: 1
 --- !u!4 &1543197185
 Transform:
   m_ObjectHideFlags: 0
@@ -396,8 +396,8 @@ Transform:
   m_GameObject: {fileID: 1719029243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0103, y: -0.0393, z: 1.3775876}
-  m_LocalScale: {x: 20.020348, y: 10.02888, z: 1}
+  m_LocalPosition: {x: -0.0103, y: 0.0215, z: 1.3775876}
+  m_LocalScale: {x: 20.020348, y: 10.150229, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
