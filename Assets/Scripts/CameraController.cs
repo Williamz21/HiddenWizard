@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject player;
-    public int leftMargin;
+    public int leftMargin = -33;
     void Start()
     {
         

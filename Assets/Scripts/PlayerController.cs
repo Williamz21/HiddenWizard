@@ -17,14 +17,33 @@ public class PlayerController : MonoBehaviour
     public int mode = 0; //0:normal  1:fuego  2:tiempo
     [SerializeField] public Lifebar lifebar;
     private bool canMove = true;
-    private bool died = false;
-    private bool fire = false;
-    private bool time = false;
+    public bool died = false;
+    public bool fire = false;
+    public bool time = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        if(SceneManager.GetActiveScene().name == "Level1"){
+            
+        }
+        else{
+            this.LoadPlayer();
+        }
+    }
+
+    public void SavePlayer(){
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer(){
+        PlayerData data = SaveSystem.LoadPlayer();
+        speed = data.speed;
+        died = data.died;
+        fire = data.fire;
+        time = data.time;
+        mode = data.mode;
+        lives = data.lives;
     }
 
     void updateAnim()
@@ -140,12 +159,11 @@ public class PlayerController : MonoBehaviour
         if (item_id == 1)
         {
             fire = true;
-            UnityEngine.Debug.LogError(fire);
         }
         if (item_id == 2)
         {
-            UnityEngine.Debug.LogError(time);
             time = true;
         }
+        this.SavePlayer();
     }
 }
