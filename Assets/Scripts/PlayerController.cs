@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject menuPause;
+    [SerializeField] private GameObject menu;
     public int speed = 5;
     Rigidbody2D rb2D;
     public Animator animator;
@@ -32,6 +34,13 @@ public class PlayerController : MonoBehaviour
             this.LoadPlayer();
         }
     }
+
+    public void GameOver(){
+        menu.SetActive(true);
+        Time.timeScale = 0f;
+        menuPause.SetActive(false);
+    }
+
 
     public void SavePlayer(){
         SaveSystem.SavePlayer(this);

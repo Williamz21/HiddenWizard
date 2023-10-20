@@ -11,6 +11,8 @@ using TMPro;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] private GameObject menuPause;
+    [SerializeField] private GameObject win;
     public float speed;
     private float distance;
     private float dirX;
@@ -149,6 +151,18 @@ public class BossController : MonoBehaviour
         animator.SetInteger("state", (int)state);
     }
 
+    private IEnumerator LoseControl()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0f;
+        win.SetActive(true);
+    }
+
+    public void WIN(){
+        menuPause.SetActive(false);
+        StartCoroutine(LoseControl());
+    }
+
     private void Invoke()
     {
         EnemyController obj = Instantiate(enemyPrefab, new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.rotation);
@@ -159,7 +173,7 @@ public class BossController : MonoBehaviour
     {
         if (other.tag == "Projectile")
         {
-            vida -= 20;
+            vida -= 50;
             lifeBossBAR.ChangeLife(vida);
         }
     }
