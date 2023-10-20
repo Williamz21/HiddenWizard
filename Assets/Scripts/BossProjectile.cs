@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class ProjectileMovement : MonoBehaviour
+public class BossProjectile : MonoBehaviour
 {
     public float tear_speed = 8f;
     private float time = 0;
@@ -61,12 +61,11 @@ public class ProjectileMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Target")
+        if (other.tag == "Player")
         {
-            if (other.GetComponent<EnemyController>() != null)
+            if (other.GetComponent<PlayerController>() != null)
             {
-                other.GetComponent<EnemyController>().setEffect(mode);
-                UnityEngine.Debug.Log(mode);
+                other.GetComponent<PlayerController>().damage(transform);
                 Destroy(gameObject);
             }
             else
@@ -75,4 +74,5 @@ public class ProjectileMovement : MonoBehaviour
             }
         }
     }
+    
 }

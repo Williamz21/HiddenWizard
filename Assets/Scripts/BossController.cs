@@ -13,83 +13,141 @@ public class BossController : MonoBehaviour
 {
     public float speed;
     private float distance;
+    private float dirX;
+    private float dirY;
     private Vector2 direction;
     private Animator animator;
-    private enum movementState { idle, leftup, rightup, leftdown, rightdown }
+    private enum movemntStatemnt { idle, left, rigth, up, down, upleft, uprigth }
     public float vida = 1000;
     private Rigidbody2D rb2D;
+    public Collider2D colider;
     private int effect = 0;
     public float distanciaMaxima = 10.0f;
     private int timer = 0;
     private bool canInvoke = false;
     float tiempoTranscurrido = 25f;
-    float intervaloDeTiempo = 30f; // 30 segundos
+    float intervaloDeTiempo = 100f; // 30 segundos
+    private bool falling = false;
 
     [SerializeField] private LifeBossBAR lifeBossBAR;
 
     public EnemyController enemyPrefab;
 
+    public GameObject player;
+    public SpriteRenderer render;
+    public AIPath aiPath;
+    public GameObject projectilePrefub;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+        colider = GetComponent<Collider2D>();
+        aiPath = GetComponent<AIPath>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        dirX = aiPath.velocity.x;
+        dirY = aiPath.velocity.y;
+        updateAttack();
         if (vida <= 0 && rb2D.simulated == true)
         {
             animator.SetBool("died", true);
             rb2D.simulated = false;
         }
-        // Resta el tiempo delta desde la variable timeRemaining.
-        tiempoTranscurrido += Time.deltaTime;
-
-        // Verifica si ha pasado el intervalo de tiempo
+        tiempoTranscurrido += 1;
         if (tiempoTranscurrido >= intervaloDeTiempo)
         {
-            // Llama a la función que quieres ejecutar
-            Invoke();
-
-            // Reinicia el temporizador
-            tiempoTranscurrido = 0f;
+            float distancia = Vector2.Distance(transform.position, player.transform.position);
+            if(distancia > 8){
+                jumpAttack();
+            }
+            tiempoTranscurrido = 0;
         }
-        /*if (rb2D.simulated == true)
-        {
-            UpdateAnimation();
-        }*/
+        updateAnim();   
     }
-
-
-    /*void UpdateAnimation()
+    private void shoot()
     {
-        movementState state;
-        if (aIPath.desiredVelocity.x < 0f && aIPath.desiredVelocity.y > 0f)
-        {
-            state = movementState.leftup;
+        GameObject proyectil = Instantiate(projectilePrefub, transform.position, Quaternion.identity);
+        Vector2 direccion = (player.transform.position - transform.position).normalized;
+        proyectil.GetComponent<BossProjectile>().defineDirectionVector(55, direccion);
+    }
+    private void updateAttack(){
+        
+        if(falling && vida >0){
+            tiempoTranscurrido++;
+            if(tiempoTranscurrido == 15){
+                transform.position = player.transform.position;
+            }
+            if(tiempoTranscurrido > 15 && tiempoTranscurrido < 50){
+                UnityEngine.Debug.LogError(transform.localScale.x);
+                transform.localScale = new Vector2(transform.localScale.x+ 0.05f, transform.localScale.y + 0.05f);
+            }
+            else if(tiempoTranscurrido >= 50){
+                colider.isTrigger = false;
+                falling = false;
+                tiempoTranscurrido = 0;
+                aiPath.enabled = true;
+                transform.localScale.Set(1, 1, 1);
+                transform.localScale = new Vector2(1,1);
+            }
+            animator.SetInteger("state", 0);
+            animator.SetBool("falling",falling);
+            return;
         }
-        else if (aIPath.desiredVelocity.x > 0f && aIPath.desiredVelocity.y > 0f)
-        {
-            state = movementState.rightup; ;
+        else if (vida > 0){
+            tiempoTranscurrido++;
+            if(tiempoTranscurrido == 15){
+                shoot();
+                tiempoTranscurrido = 0;
+            }
         }
-        else if (aIPath.desiredVelocity.x > 0f && aIPath.desiredVelocity.y < 0f)
+    }
+    private void jumpAttack(){
+        animator.SetInteger("state", 0);
+        falling = true;
+        tiempoTranscurrido = 0;
+        colider.isTrigger = true;
+        aiPath.enabled = false;
+        animator.SetBool("falling",falling);
+    }
+    
+    void updateAnim()
+    {
+        movemntStatemnt state = 0;
+        if (dirX == 0 && dirY == 0)
         {
-            state = movementState.rightdown;
+            state = movemntStatemnt.idle;
         }
-        else if (aIPath.desiredVelocity.x < 0f && aIPath.desiredVelocity.y < 0f)
+        else if (dirX > 0f && dirY > 0f)
         {
-            state = movementState.leftdown;
+            state = movemntStatemnt.uprigth;
         }
-        else
+        else if (dirX < 0f && dirY > 0f)
         {
-            state = movementState.idle;
+            state = movemntStatemnt.upleft;
         }
-        Transform a = transform.GetChild(0);
-        Animator anim = a.GetComponent<Animator>();
-        anim.SetInteger("state", effect);
+        else if (dirX > 0f && dirY <= 0f)
+        {
+            state = movemntStatemnt.rigth;
+        }
+        else if (dirX < 0f && dirY <= 0f)
+        {
+            state = movemntStatemnt.left;
+        }
+        else if (dirY < 0f)
+        {
+            state = movemntStatemnt.down;
+        }
+        else if (dirY > 0f)
+        {
+            state = movemntStatemnt.up;
+        }
         animator.SetInteger("state", (int)state);
-    }*/
+    }
 
     private void Invoke()
     {

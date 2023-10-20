@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ReproductorVideo : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public string escenaAlFinalizar;
+    public string escenaAlFinalizar;        
 
     void Start()
     {

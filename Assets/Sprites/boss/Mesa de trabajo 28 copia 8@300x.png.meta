@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mesa de trabajo 28 copia 8@300x_0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 165
+        width: 267
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98227ef864a31394ea74dddb3f62f8b2
+      internalID: -616963050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mesa de trabajo 28 copia 8@300x_2
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 163
+        width: 271
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6b8e1358a35f24c9fadd8115d6e707
+      internalID: -35509343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mesa de trabajo 28 copia 8@300x_8
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 159
+        width: 275
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3141e29608e8a4b8ef9a837f341ff7
+      internalID: -1208124199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mesa de trabajo 28 copia 8@300x_0: -616963050
+      Mesa de trabajo 28 copia 8@300x_1: 1601030078
+      Mesa de trabajo 28 copia 8@300x_10: -1439314003
+      Mesa de trabajo 28 copia 8@300x_11: 1331049740
+      Mesa de trabajo 28 copia 8@300x_12: 390816589
+      Mesa de trabajo 28 copia 8@300x_13: 1011679332
+      Mesa de trabajo 28 copia 8@300x_14: -1612497599
+      Mesa de trabajo 28 copia 8@300x_15: 2064259532
+      Mesa de trabajo 28 copia 8@300x_16: -1961266475
+      Mesa de trabajo 28 copia 8@300x_17: -546415352
+      Mesa de trabajo 28 copia 8@300x_18: -2119617288
+      Mesa de trabajo 28 copia 8@300x_19: 1532112265
+      Mesa de trabajo 28 copia 8@300x_2: -35509343
+      Mesa de trabajo 28 copia 8@300x_20: -613560276
+      Mesa de trabajo 28 copia 8@300x_21: 72500450
+      Mesa de trabajo 28 copia 8@300x_22: -465187449
+      Mesa de trabajo 28 copia 8@300x_23: 59430934
+      Mesa de trabajo 28 copia 8@300x_24: 2083468485
+      Mesa de trabajo 28 copia 8@300x_25: 884440841
+      Mesa de trabajo 28 copia 8@300x_26: 80284643
+      Mesa de trabajo 28 copia 8@300x_3: -1447039219
+      Mesa de trabajo 28 copia 8@300x_4: -381135249
+      Mesa de trabajo 28 copia 8@300x_5: 1136055031
+      Mesa de trabajo 28 copia 8@300x_6: 114529741
+      Mesa de trabajo 28 copia 8@300x_7: 1410758630
+      Mesa de trabajo 28 copia 8@300x_8: -1208124199
+      Mesa de trabajo 28 copia 8@300x_9: -287551416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

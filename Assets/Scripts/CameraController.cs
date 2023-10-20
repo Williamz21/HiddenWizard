@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
 
     public GameObject player;
     public int leftMargin = -33;
+    public int rigthMargin = -33;
     void Start()
     {
         
@@ -16,7 +17,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-        if (player != null && player.transform.position.x>=leftMargin)
+        if (player != null && player.transform.position.x>=leftMargin && player.transform.position.x<=rigthMargin)
         {
             Vector3 posicionObjetivo = player.transform.position;
             posicionObjetivo.y = transform.position.y;

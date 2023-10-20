@@ -84,6 +84,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(died){
+            return;
+        }
         if (canMove)
         {
             dirX = Input.GetAxis("Horizontal");
@@ -97,7 +100,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("died", true);
             rb2D.simulated = false;
         }
-
     }
     private void Update()
     {
@@ -165,5 +167,10 @@ public class PlayerController : MonoBehaviour
             time = true;
         }
         this.SavePlayer();
+    }
+    public void damage(Transform projectile){
+        lives--;
+        lifebar.ChangeLife(lives);
+        StartCoroutine(LoseControl());
     }
 }

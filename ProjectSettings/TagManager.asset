@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - FireFlower
   - SandClock
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
